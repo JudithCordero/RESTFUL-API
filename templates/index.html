@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Lista</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <h1>Lista de planes</h1>
+
+     <!-- Formulario de búsqueda -->
+    <form method="GET" action="{{ url_for('index') }}">
+        <input type="text" name="search" placeholder="Buscar por clave, materia, etc.">
+        <button type="submit">Buscar</button>
+    </form>
+    
+    <div class="actions">
+        <a href="{{ url_for('create') }}">Crear uno nuevo</a>
+        <a href="{{ url_for('update') }}">Actualizar</a>
+        <a href="{{ url_for('delete') }}">Borrar</a>
+    </div>
+    
+    <table>
+        <tr>
+            <th>Clave plan</th>
+            <th>Grado</th>
+            <th>Clave</th>
+            <th>Materia</th>
+            <th>Horas prac</th>
+            <th>Horas teo</th>
+            <th>Créditos</th>
+        </tr>
+        {% for item in data.body %}
+        <tr>
+            <td>{{ item.cve_plan }}</td>
+            <td>{{ item.grado }}</td>
+            <td>{{ item.clave }}</td>
+            <td>{{ item.materia }}</td>
+            <td>{{ item.horas_prac }}</td>
+            <td>{{ item.horas_teo }}</td>
+            <td>{{ item.creditos }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+    
+</body>
+</html>

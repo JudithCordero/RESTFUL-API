@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Crear uno nuevo</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <h1>Crear uno nuevo</h1>
+    <form method="POST">
+        <label for="cve_plan">Clave Plan:</label>
+        <input type="text" id="cve_plan" name="cve_plan"><br>
+        <label for="cve_plan">Grado:</label>
+        <input type="text" id="grado" name="grado"><br>
+        <label for="clave">Clave:</label>
+        <input type="text" id="clave" name="clave"><br>
+        <label for="nombre_materia">Nombre De Materia:</label>
+        <input type="text" id="materia" name="materia"><br>
+        <label for="cve_plan">Horas prac:</label>
+        <input type="text" id="horas_prac" name="horas_prac"><br>
+        <label for="cve_plan">Horas teo:</label>
+        <input type="text" id="horas_teo" name="horas_teo"><br>
+        <label for="creditos">Créditos:</label>
+        <input type="text" id="creditos" name="creditos"><br>
+        <button type="submit">Crear</button>
+    </form>
+    <a href="{{ url_for('index') }}">Regresar a la lista</a>
+</body>
+</html>
